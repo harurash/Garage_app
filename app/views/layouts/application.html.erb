@@ -22,9 +22,9 @@
       <ul>
         <% if user_signed_in? %>
         <li><a class="active" href="/">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><%= link_to "MyGarage",user_path(current_user.id)%></li>
+        <li><a href="#">Favorite</a></li>
+        <li><a href="#">Follower</a></li>
         <li><a href="/users/sign_out">Logout</a></li>
         <% else %>
         <li><a href="/users/sign_in">Login</a></li>
