@@ -16,7 +16,9 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <label class="logo">TweetApp</label>
+      <div class="header_logo">
+        <%= image_tag "/Carson, Reeve, and Yates.png",class: "car_img"%>
+      </div>
       <ul>
         <% if user_signed_in? %>
         <li><a class="active" href="/">Home</a></li>
