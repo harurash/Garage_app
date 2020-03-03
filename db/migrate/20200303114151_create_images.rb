@@ -1,9 +1,8 @@
 class CreateImages < ActiveRecord::Migration[5.2]
   def change
     create_table :images do |t|
-      t.integer :tweet_id
-      t.text :image
-
+      t.integer :tweet_id,      null:false
+      t.string :image,          null:false
       t.timestamps
     end
   end
