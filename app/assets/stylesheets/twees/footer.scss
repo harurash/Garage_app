@@ -1,0 +1,31 @@
+.footer{
+  height: 120px;
+  width: 100%;
+  background-color:lightgoldenrodyellow;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &__box{
+    height:90px;
+    width:100%;
+    background-color:#0082e6;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+  .footer__box__btn{
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    background-color:#0082e6;
+    z-index: 9;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.my-white{
+  color: #fff;
+}
