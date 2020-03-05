@@ -4,17 +4,24 @@
     </div>
   </div>
   <div class="main">
+  <% @tweets.each do |tweet| %>
     <div class="main__content">
       <div class="main__content__top-image">
-        <div class="main__content__top-image__icon"></div>
+        <div class="main__content__top-image__icon">
+          <%=image_tag tweet.user.image.url ,class:"icon_image"%>
+        </div>
       </div>
       <div class="main__content__box">
         <div class="main__content__box__image">
           <div class="main__content__box__image__choice"></div>
         </div>
         <div class="main__content__box__text">
-          <div class="main__content__box__text__name"></div>
-          <div class="main__content__box__text__message"></div>
+          <div class="main__content__box__text__name">
+            <p><%= tweet.user.name %></P>
+          </div>
+          <div class="main__content__box__text__message">
+            <%= tweet.body%>
+          </div>
         </div>
       </div>
       <div class="main__content__btns">
@@ -22,6 +29,7 @@
         <div class="main__content__btns__favorite"></div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 <%=render partial:"footer"%>
