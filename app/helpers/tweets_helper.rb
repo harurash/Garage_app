@@ -1,5 +1,5 @@
 module TweetsHelper
-  def find_tweet_user(tweet)
-    @user = User.find_by(user_id: tweet.id)
+  def new_image(tweet)
+    @new_image = @images.find_by(tweet_id: tweet.id)
   end
 end

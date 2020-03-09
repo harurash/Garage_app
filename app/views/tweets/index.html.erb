@@ -13,7 +13,11 @@
       </div>
       <div class="main__content__box">
         <div class="main__content__box__image">
-          <div class="main__content__box__image__choice"></div>
+          <div class="main__content__box__image__choice">
+            <% @tweets.each do |tweet|%>
+            <%= image_tag "#{new_image(tweet).image}", class: "new-item" %>
+            <% end %>
+          </div>
         </div>
         <div class="main__content__box__text">
           <div class="main__content__box__text__name">
