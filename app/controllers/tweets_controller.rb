@@ -1,7 +1,9 @@
 class TweetsController < ApplicationController
   def new
     @tweet =Tweet.new
+    10.times{@tweet.images.build}
   end
+
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
@@ -11,6 +13,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
+    @images = Image.all
   end
 
   def show
@@ -20,6 +23,7 @@ class TweetsController < ApplicationController
 
   private
     def tweet_params
-      params.require(:tweet).permit(:body)
+      
+      params.require(:tweet).permit(:body,images_attributes:[:image])
     end
 end
