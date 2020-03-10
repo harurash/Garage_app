@@ -7,13 +7,16 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
-    @tweet.save
-    redirect_to tweets_path
+    if @tweet.save
+      redirect_to tweets_path,notice: "投稿しました"
+    else
+      render "new"
+    end
   end
 
   def index
     @tweets = Tweet.all
-    @images = Image.all
+    @images = Image.where(tweet_id: @tweets)
   end
 
   def show
@@ -23,7 +26,6 @@ class TweetsController < ApplicationController
 
   private
     def tweet_params
-      
       params.require(:tweet).permit(:body,images_attributes:[:image])
     end
 end
