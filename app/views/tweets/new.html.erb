@@ -1,10 +1,14 @@
 <h1>Tweets#new</h1>
 <p>Find me in app/views/tweets/new.html.erb</p>
+<% if flash[:notice] %>
+  <p><%= flash[:notice]%></p>
+<% end %>
 <div class="contents">
 <%= form_for @tweet do |f|%>
   <%= f.label :body,"テキスト"%>
   <%= f.text_area :body,placeholder: "ツイートする"%>
   <%= f.fields_for :image do |i| %>
+    <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file" %>
     <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file" %>
   <div class="submit">
     <%=f.submit "投稿",{class: "btn"}%>

@@ -60,11 +60,18 @@
         height: 100%;
         width:60%;
         background-color: skyblue;
+        float: left;
         .new-item{
           height: 100%;
           width: 100%;
           object-fit: cover;
         }
+      }
+      &__sub{
+        height: 50%;
+        width: 40%;
+        background-color: yellow;
+        float: right;
       }
     }
     &__text{
@@ -89,4 +96,11 @@
     background-color: springgreen;
   }
   }
+}
+
+
+
+.image_sub{
+  height: 100%;
+  width: 100%;
 }

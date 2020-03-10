@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tweets do
+    resource :favorites,only: [ :create, :destroy]
     resources :images,only: [:create]
   end
   resources :users
