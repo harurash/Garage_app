@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tweets
   has_many :favorites
+  has_many :favorite_tweets, through: :favorites, source: :tweet
   mount_uploader :image, ImageUploader
 end

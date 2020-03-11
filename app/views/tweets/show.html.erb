@@ -2,3 +2,7 @@
 <p>Find me in app/views/tweets/show.html.erb</p>
 
 <p><span>ツイート内容: </span><%= @tweets.body %></p>
+<% @favorite_tweets.each do |tweet| %>
+  <hr>
+  <p><span>ファボツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
+<% end %>
