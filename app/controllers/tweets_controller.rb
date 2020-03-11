@@ -16,12 +16,13 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
-    @images = Image.where(tweet_id: @tweets)
+    @images = Image.all
   end
 
   def show
     @tweets = Tweet.find(params[:id])
     @user = @tweets.user
+    @favorite_tweets = @user.favorite_tweets
   end
 
   private

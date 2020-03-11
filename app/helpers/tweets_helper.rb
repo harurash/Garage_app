@@ -4,6 +4,6 @@ module TweetsHelper
   end
 
   def sub_image(tweet)
-    @sub_image = Image.find_by(tweet_id: tweet.id)
+    @sub_image = Image.where(tweet_id: tweet.id)
   end
 end
