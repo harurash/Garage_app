@@ -64,3 +64,6 @@ gem "pry-rails"
 gem "devise"
 gem "carrierwave"
 gem 'jquery-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
