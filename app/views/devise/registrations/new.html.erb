@@ -39,10 +39,17 @@
 
   <%= render "devise/shared/links" %>
 
+
+  <div class="new--user--select--content" id="google">
+    <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post ,class:"session-link" do %>
+      <i class="fab fa-google google">&emsp;googleで登録</i>
+    <% end %>
+  </div>
+  <div class="new--user--select--content" id="facebook">
+    <%= link_to  user_facebook_omniauth_authorize_path, method: :post ,class:"session-link" do %>
+      <i class="fab fa-facebook-square facebook">&emsp;Facebookで登録</i>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to 'Facebookで新規作成', user_facebook_omniauth_authorize_path, method: :post%>
-<%= link_to 'Googleで新規作成', user_google_oauth2_omniauth_authorize_path, method: :post%>
-
 
 
