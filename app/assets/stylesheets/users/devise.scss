@@ -1,0 +1,53 @@
+.user-session-main {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .field {
+    .input-field {
+      width: 200px;
+      height: 30px;
+      padding: 0 5px;
+      margin-bottom: 10px;
+    }
+  }
+  .test-user {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: whitesmoke;
+  }
+  .actions {
+    .btn {
+      width: 200px;
+      background-color: blue;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+.new--user--select--content {
+  width: 300px;
+  height: 40px;
+  display: flex;
+    .google {
+      width: 200px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: red;
+      line-height: 30px;
+      color: white;
+    }
+    .facebook {
+      width: 200px;
+      height: 30px;
+      background-color: #385185;
+      line-height: 30px;
+      border-radius: 10px;
+      color: white;
+    }
+  }
+
