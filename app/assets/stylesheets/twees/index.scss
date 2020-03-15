@@ -1,106 +1,280 @@
 .wrapper{
-  height: calc(100% - 110px);
-  width:100%;
-  background-color: lemonchiffon;
-}
-// search機能
-.searchBox{
-  height: 80px;
-  width:100%;
-}
-
-
-
-
-// tweet内容
-.main{
-  height: calc(100% - 100px);
-  width: 100%;
-  background-color: rebeccapurple;
-  overflow: scroll;
-  &__content{
-    height:300px;
-    width:60%;
-    background-color: rosybrown;
-    margin: 10px auto;
-    vertical-align: center;
+  height: max-content;
+  width: 100vw;
+  display: flex;
+  background-color: #d2d2d2;
+  .side{
+    height: 100vh;
+    width: 30%;
     display: flex;
-    &__top-image{
-      position: relative;
-      height: 100%;
-      width:70px;
-      background-color: seagreen;
-      &__icon{
-        height:50px;
-        width:50px;
-        background-color: royalblue;
-        margin-top: 10px;
-        margin-left: 10px;
-        border-radius: 50px;
-        position: absolute;
-        .icon_image{
-          width: 100%;
-          height: 100%;
-          border-radius: 50px;
-          object-fit: cover;
-          border: white 1px solid;
-        }
-      }
-    }
-  &__box{
-    position: relative;
-    height: 100%;
-    width: calc(100% - 150px);
-    background-color: saddlebrown;
-    &__image{
-      height: 70%;
-      width: 100%;
-      background-color: seashell;
-      &__choice{
-        height: 100%;
-        width:60%;
-        background-color: skyblue;
-        float: left;
-        .new-item{
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
-      }
-      &__sub{
-        height: 50%;
-        width: 40%;
-        background-color: yellow;
-        float: right;
-      }
-    }
-    &__text{
-      height: 30%;
-      width:100%;
-      background-color: silver;
-      &__name{
-        height: 20px;
-        width: 120px;
-        background-color: steelblue;
-      }
-      &__message{
-        height: calc(100% - 20px);
+    align-items: center;
+    justify-content: center;
+    &__pickup{
+      margin-top: 20px;
+      width:300px;
+      height: 90%;
+      background-color: lightslategray;
+      &__header{
+        height: 40px;
         width: 100%;
-        background-color: tan;
+        background-color: lightsteelblue;
+      }
+      &__contents{
+        height: 200px;
+        width: 100%;
+        background-color: blue;
       }
     }
   }
-  &__btns{
-    height: 100%;
-    width: 80px;
-    background-color: springgreen;
-  }
+  .main{
+    width: 70%;
+    height: 100vh;
+    padding-top: 40px;
+    .search{
+      height: 250px;
+      width: 80%;
+      background-image: image-url("image.png");
+      background-size:100% 100%;
+      background-repeat: no-repeat;
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__box{
+        height: 40px;
+        width:400px;
+        background-color: white;
+        &__text{
+          height: 100%;
+          width:calc(100% - 40px);
+          float: left;
+
+        }
+        &__btn{
+          height: 100%;
+          width:40px;
+          background-color: #0082e6;
+          float: right;
+        }
+      }
+    }
+    .messages{
+      height: 400px;
+      width: 80%;
+      background-color:white;
+      margin: 50px auto;
+      padding-top:10px;
+      overflow: scroll;
+      .message{
+        background-color: gray;
+        height: 200px;
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        &__user{
+          height: 100%;
+          width:70px;
+          &__icon{
+            height: 50px;
+            width: 50px;
+            background-color: darkgray;
+            border-radius: 50px;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+            .icon_image{
+              height: 100%;
+              width: 100%;   
+              border-radius: 50px;
+              object-fit: cover;
+              border: white 1px solid;  
+           }
+          }
+          &__name{
+           height: 20px;
+           width: 60px;
+           position: absolute;
+           margin-top: 60px;
+           color: white;
+           font-size: 16px;
+           font-weight: bold;
+           text-align: center;
+           line-height: 20px;
+          }
+        }
+        &__image{
+          height: 100%;
+          width: 400px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__images{
+            height: 180px;
+            width: 390px;
+            background-color: white;
+            display: flex;
+            &__first{
+            height: 100%;
+            width:300px;
+            background-color: red; 
+            .image-first{
+              height: 100%;
+              width: 100%;
+            } 
+            }
+            &__sub{
+              background-color: salmon;
+              height: 60px;
+              width: 90px;
+              .image_sub{
+                height: 100%;
+                width: 100%;
+              }
+            }
+          }
+        }
+        &__contents{
+          height: 100%;
+          width: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__box{
+            height: 180px;
+            width:260px;
+            &__btns{
+              height: 50PX;
+              width: 100%;
+              background-color: #d2d2d2;
+              opacity: 0.8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &__btn{
+                height: 40px;
+                width:180px;
+                display: flex;
+                justify-content: space-between;
+                &__favorite{
+                  height: 40px;
+                  width: 40px;
+                  border-radius: 30px;
+                  background-color: snow;
+                  text-align: center;
+                  line-height: 40px;
+                  font-size: 30px;
+                  .my-example{
+                    color: red;
+                  }
+                }
+                &__delete{
+                  height: 40px;
+                  width:40px;
+                  border-radius: 30px;
+                  background-color: snow;
+                  text-align: center;
+                  line-height: 40px;
+                  font-size: 30px;
+                  .my-blue{
+                    color: skyblue;
+                  }
+                }
+                &__show{
+                  height: 40px;
+                  width:40px;
+                  border-radius: 30px;
+                  background-color: snow;
+                  text-align: center;
+                  line-height: 40px;
+                  font-size: 30px;
+                  .my-green{
+                    color: teal;
+                  }
+                }
+              }
+            }
+            &__text{
+              height: 120px;
+              width: 260px;
+              background-color: #d2d2d2;
+              opacity: 0.8;
+              overflow: scroll;
+              margin-top: 10px;
+              &__title{
+                height: 30px;
+                width: 100px;
+                line-height: 30px;
+                color: white;
+                font-weight: bold;
+              }
+              &__body{
+                height: 90px;
+                width: 240px;
+                border-radius: 30px;
+                font-weight: bold;
+
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 
+@media (max-width: 952px){
+  .wrapper{
+    height: calc(100vh - 80px);
+    .main{
+      width: 100%;
+      height: 100%;
+      padding-top: 30px;
+      .search{
+        height: 160px;
+        width: 80%;
+        margin: 30px auto;
+      }
+      .messages{
+        height: 300px;
+        width: 80%;
+        background-color:white;
+        margin: 30px auto;
+        
+      }
+    }
+    .side{
+      display: none;
+    }
+  }
+}
 
-.image_sub{
-  height: 100%;
-  width: 100%;
+//投稿ボタン
+
+.purchaseBtn {
+  width: 110px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  transition: all 1s linear 0s;
+  box-sizing: border-box;
+  cursor: pointer;
+  .purchaseBtn__text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  img.purchaseBtn__icon{
+    width: 60%;
+  } 
+  &:hover {
+    transform: rotateY(360deg);
+    opacity: 0.6;
+  }
 }
