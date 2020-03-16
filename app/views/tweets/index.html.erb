@@ -1,5 +1,7 @@
 <% if flash[:notice] %>
-  <p><%= flash[:notice]%></p>
+  <div class="tweet_flash">
+    <p><%= flash[:notice]%></p>
+  </div>
 <% end %>
 <div class="side">
   <div class="side__pickup">
@@ -15,7 +17,7 @@
     </div>
   </div>
   <div class="messages">
-    <% @tweets.each do |tweet| %>
+     <% @tweets.each do |tweet| %>
     <div class="message">
        <div class="message__user">
           <div class="message__user__icon">
@@ -47,7 +49,7 @@
                 </div>
               </div>
               <div class="message__contents__box__btns__btn__delete">
-              <%= link_to"#" do%>
+              <%= link_to tweet_path(tweet.id),method: :delete do%>
                 <i class="fas fa-trash-alt my-blue faa-wrench animated-hover"></i>
               <%end%>
               </div>
@@ -66,10 +68,10 @@
             <%= tweet.body%>
           </div>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
+  <% end %>
 </div>
 
 <%=link_to (new_tweet_path), class:"purchase" do %>

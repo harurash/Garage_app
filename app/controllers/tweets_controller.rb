@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def new
     @tweet =Tweet.new
-    10.times{@tweet.images.build}
+    3.times{@tweet.images.build}
   end
 
   def create
@@ -23,6 +23,14 @@ class TweetsController < ApplicationController
     @tweets = Tweet.find(params[:id])
     @user = @tweets.user
     @favorite_tweets = @user.favorite_tweets
+  end
+  def destroy
+    tweet =Tweet.find_by(params[:id])
+    if tweet.destroy
+      redirect_to root_path,notice: "削除しました"
+    else
+      redirect_to root_path,notice: "削除に失敗しました"
+    end
   end
 
   private
