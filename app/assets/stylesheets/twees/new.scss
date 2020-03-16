@@ -1,0 +1,64 @@
+.contents{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__form{
+    height: 500px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__box{
+      height: 500px;
+      width: 400px;
+      background-color: white;
+      &__title{
+        height: 60px;
+        width:100%;
+        background-color: gray;
+        text-align: center;
+        line-height: 60px;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+      }
+      &__text{
+        height: 140px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__file{
+        height: 160px;
+        width: 100%;
+        #img-file{
+          margin-top: 10px;
+          height: 40px;
+        }
+      }
+      .submit{
+        height: 180px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn{
+          height: 40px;
+          width: 260px;
+          background-color: blue;
+          font-size: 20px;
+          color: white;
+          border-radius: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+textarea{
+  width: 320px;
+  height: 80px;
+}
