@@ -140,9 +140,16 @@
               background-color: salmon;
               height: 60px;
               width: 90px;
-              .image_sub{
+              &__thumb{
                 height: 100%;
-                width: 100%;
+                width:100%;
+                .image_sub{
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+              &__thumb:not(.active){
+                opacity: 0.2;
               }
             }
           }
