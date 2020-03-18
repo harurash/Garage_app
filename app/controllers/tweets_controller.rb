@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = Tweet.create(tweet_params)
     @tweet.user_id = current_user.id
     if @tweet.save
       redirect_to tweets_path,notice: "投稿しました"
@@ -21,11 +21,11 @@ class TweetsController < ApplicationController
 
   def show
     @tweets = Tweet.find(params[:id])
-    @user = @tweets.user
-    @favorite_tweets = @user.favorite_tweets
+    @first_image = Image.find_by(tweet_id: @tweets.id)
+    @images = Image.where(tweet_id: @tweets.id)
   end
   def destroy
-    tweet =Tweet.find_by(params[:id])
+    tweet = Tweet.find(params[:id])
     if tweet.destroy
       redirect_to root_path,notice: "削除しました"
     else

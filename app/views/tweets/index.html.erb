@@ -35,7 +35,7 @@
           <div class="message__image__images__sub">
             <% sub_image(tweet).each do |image|%>
               <div class="message__image__images__sub__thumb">
-                <%= image_tag "#{image.image}",class:"image_sub"%>
+                <%= image_tag "#{image.image}",class: "image_sub"%>
               </div>
             <% end %>
           </div>
@@ -56,7 +56,7 @@
               <%end%>
               </div>
               <div class="message__contents__box__btns__btn__show">
-                <%= link_to"#" do%>
+                <%= link_to tweet_path(tweet.id) do%>
                   <i class="far fa-comment my-green faa-wrench animated-hover"></i>
                 <%end%>
               </div>

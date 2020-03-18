@@ -10,21 +10,21 @@
         <h2>投稿</h2>
       </div>
       <div class="contents__form__box__text">
-        <%= form_for @tweet do |f|%>
+        <%= form_for @tweet do |f| %>
           <%= f.text_area :body,placeholder: "140文字以内であなたの気持ちを呟こう"%>
       </div>
       <div class="contents__form__box__file">
         <p>＊画像は３枚まで投稿できます</p>
         <%= f.fields_for :image do |i| %>
-          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file" %>
-          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file" %>
-          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file" %>
+          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file1" %>
+          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file2" %>
+          <%= i.file_field :image, type: 'file', name: "tweet[images_attributes][][image]", value:"", id:"img-file3" %>
       </div>
       <div class="submit">
-        <%=f.submit "保存する",{class: "btn"}%>
+        <%= f.submit "保存する",{class: "btn"} %>
+          <%end%>
+        <%end%>
       </div>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>
