@@ -11,36 +11,74 @@
 }
 
 .wrapper{
-  height: 100vh;
+  height: max-content;
   width: 100vw;
   display: flex;
   background-color: #d2d2d2;
   .side{
-    height: 100vh;
+    height: 100%;
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
     &__pickup{
-      margin-top: 20px;
+      margin-top: 50px;
       width:300px;
-      height: 90%;
-      background-color: lightslategray;
+      height: max-content;
+      background-color: black;
       &__header{
-        height: 40px;
+        height: 50px;
         width: 100%;
-        background-color: lightsteelblue;
+        background-color:dimgray;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        line-height: 50px;
       }
       &__contents{
-        height: 200px;
-        width: 100%;
-        background-color: blue;
+        height: 250px;
+        width: 280px;
+        margin: 20px auto;
+        .rank_image{
+          height: 80%;
+          width: 100%;
+          background-size: cover;
+        }
+        &__favorite{
+          height: 50px;
+          width: 100%;
+          background-color: gray;
+          &__count{
+            height: 100%;
+            width:70%;
+            float: left;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+          }
+          &__btn{
+            float: right;
+            height: 100%;
+            width:30%;
+            float: right;
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;
+            &__show{
+              height: 30px;
+              width: 50px;
+              font-size: 30px;
+            }
+          }
+        }
       }
     }
   }
   .main{
     width: 70%;
-    height: 100vh;
+    height: 100%;
     padding-top: 40px;
     .search{
       height: 250px;
@@ -71,7 +109,7 @@
       }
     }
     .messages{
-      height: 400px;
+      height: 700px;
       width: 80%;
       background-color:white;
       margin: 50px auto;
