@@ -5,8 +5,26 @@
 <% end %>
 <div class="side">
   <div class="side__pickup">
-    <div class="side__pickup__header"></div>
-    <div class ="side__pickup__contents"></div>
+    <div class="side__pickup__header">
+      <h2>PICK UP!!</h2>
+    </div>
+    <% @favorite_ranks.each do |tweet|%>
+    <div class ="side__pickup__contents">
+      <%= image_tag search_image(tweet).image.url,class: "rank_image"%>
+      <div class="side__pickup__contents__favorite">
+        <div class="side__pickup__contents__favorite__count">
+          <p><span>FAVORITES: </span><%= tweet.favorites.count %></p>
+        </div>
+        <div class="side__pickup__contents__favorite__btn">
+          <div class="side__pickup__contents__favorite__btn__show">
+            <%= link_to tweet_path(tweet.id) do%>
+              <i class="far fa-comment my-green faa-wrench animated-hover"></i>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 <div class="main">

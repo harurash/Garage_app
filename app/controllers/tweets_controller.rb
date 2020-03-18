@@ -17,6 +17,7 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
     @images = Image.all
+    @favorite_ranks = Tweet.find(Favorite.group(:tweet_id).order('count(tweet_id) desc').limit(3).pluck(:tweet_id))
   end
 
   def show
@@ -32,7 +33,6 @@ class TweetsController < ApplicationController
       redirect_to root_path,notice: "削除に失敗しました"
     end
   end
-
   private
     def tweet_params
       params.require(:tweet).permit(:body,images_attributes:[:image])
