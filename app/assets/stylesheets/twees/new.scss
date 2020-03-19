@@ -1,5 +1,5 @@
 .contents{
-  height: 100%;
+  height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -34,7 +34,15 @@
       &__file{
         height: 160px;
         width: 100%;
-        #img-file{
+        #img-file1{
+          margin-top: 10px;
+          height: 40px;
+        }
+        #img-file2{
+          margin-top: 10px;
+          height: 40px;
+        }
+        #img-file3{
           margin-top: 10px;
           height: 40px;
         }

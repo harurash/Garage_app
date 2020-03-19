@@ -1,8 +1,50 @@
-<div class="footer">
-  <div class="footer__box"></div>
-  <div class="footer__box__btn">
-    <%= link_to(new_tweet_path) do %>
-      <i class="fas fa-plus-circle fa-5x my-white faa-flash animated-hover"></i>
-    <%end%>
+<section class="footer">
+  <ul class="contents_footer">
+    <li class="content_footer">
+        <h2 class="content_footer__head">GARAGEについて</h2>
+      <ul class="b">
+        <li>
+          <a class="menu" href="/">会社概要（運営会社</a>
+        </li>
+        <li>
+          <a class="menu" href="/">プライバシーポリシー</a>
+        </li>
+        <li>
+          <a class="menu" href="/">GARAGE利用規約</a>
+        </li>
+        <li>
+          <a class="menu" href="/">ポイントに関する特約</a>
+        </li>
+      </ul>
+    </li>
+  <li class="content_footer">
+    <h2 class="content_footer__head">GARAGEを見る</h2>
+    <ul class="b">
+      <li>
+        <a class="menu" href="/">会社概要（運営会社）</a>
+      </li>
+      <li>
+        <a class="menu" href="/">プライバシーポリシー</a>
+      </li>
+    </ul>
+  </li>
+  <li class="content_footer">
+  <h2 class="content_footer__head">ヘルプ＆ガイド</h2>
+  <ul class="b">
+    <li>
+      <a class="menu" href="/">GARAGEガイド</a>
+    </li>
+    <li>
+      <a class="menu" href="/">GARAGEロゴ利用ガイドライン</a>
+    </li>
+    <li>
+      <a class="menu" href="/">お知らせ</a>
+    </li>
+  </ul>
+    </li>
+  </ul>
+  <div class="footer__logo">
+    <a href="/"><%= image_tag "/Carson, Reeve, and Yates (4).png",class: "img_footer" %></a>
   </div>
-</div>
+  <p>© GARAGEAPP</p>
+</section>

@@ -33,6 +33,9 @@ class TweetsController < ApplicationController
       redirect_to root_path,notice: "削除に失敗しました"
     end
   end
+  def search
+    @tweets = Tweet.search(params[:keyword])
+  end
   private
     def tweet_params
       params.require(:tweet).permit(:body,images_attributes:[:image])

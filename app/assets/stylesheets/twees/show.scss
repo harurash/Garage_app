@@ -1,5 +1,5 @@
 .show-contents{
-  height: 100%;
+  height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   &__box{
     height: 600px;
     width: 500px;
-    background-color: white;
+    background-color: gray;
     &__main{
       height: 320px;
       width: 100%;
@@ -20,7 +20,8 @@
         margin-top: 20px;
         .message__image__images__main{
           height: 220px;
-          width: 100%;
+          width: 300px;
+          margin:  0 auto;
           .image-main{
             height: 100%;
             width:100%;
@@ -30,14 +31,12 @@
         .message__image__images__subs{
           height: 80px;
           width: 100%;
-          background-color:#d2d2d2;
-
+          background-color:white;
           display: flex;
-          justify-content: space-between;
+          margin-top: 10px;
           &__thumb{
             height: 80px;
             width: 33%;
-            background-color: rosybrown;
             .image_subs{
               height: 100%;
               width: 100%;
@@ -60,7 +59,7 @@
           width: 400px;
           opacity: 0.8;
           overflow: scroll;
-          background-color:#d2d2d2;
+          background-color:white;
           &__memo{
             height: 40px;
             width: 100%;

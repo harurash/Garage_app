@@ -1,0 +1,98 @@
+<% if flash[:notice] %>
+  <div class="tweet_flash">
+    <p><%= flash[:notice]%></p>
+  </div>
+<% end %>
+
+<%# 検索画面 %>
+
+<div class="main">
+  <div class="search">
+    <div class="search__box">
+      <div class="search__box__text">
+        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      </div>
+      <div class="search__box__btn">
+        <label for="search-btn"> 
+          <div class="search_btn_label">
+            <%= image_tag "/icon-search 1.png", class:"search_icon" %>
+            <%= form.submit "検索", class: "search-btn",id: "search-btn"%>
+            <% end %>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <%# メッセージ表示 %>
+  <div class="messages">
+     <% @tweets.each do |tweet| %>
+    <div class="message">
+       <div class="message__user">
+          <div class="message__user__icon">
+            <%=image_tag tweet.user.image.url ,class:"icon_image"%>
+          </div>
+          <div class="message__user__name">
+            <p><%= tweet.user.name %></P>
+          </div>
+       </div>
+       <div class="message__image">
+        <div class= "message__image__images">
+          <div class="message__image__images__first">
+            <%= image_tag "#{new_image(tweet).image}", class: "image-first" %>
+          </div>
+          <div class="message__image__images__sub">
+            <% sub_image(tweet).each do |image|%>
+              <div class="message__image__images__sub__thumb">
+                <%= image_tag "#{image.image}",class: "image_sub"%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+       </div>
+      <div class="message__contents">
+        <div class="message__contents__box">
+          <div class="message__contents__box__btns">
+            <div class ="message__contents__box__btns__btn">
+              <div class="message__contents__box__btns__btn__favorite">
+                <div id="likes_buttons_<%= tweet.id %>">
+                  <%= render partial: 'favorites/favorite', locals: { tweet: tweet} %>
+                </div>
+              </div>
+              <div class="message__contents__box__btns__btn__delete">
+              <%= link_to tweet_path(tweet.id),method: :delete do%>
+                <i class="fas fa-trash-alt my-blue faa-wrench animated-hover"></i>
+              <%end%>
+              </div>
+              <div class="message__contents__box__btns__btn__show">
+                <%= link_to tweet_path(tweet.id) do%>
+                  <i class="far fa-comment my-green faa-wrench animated-hover"></i>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        <div class="message__contents__box__text">
+          <div class="message__contents__box__text__title">
+            <p class="memo">MEMO:</p>
+          </div>
+          <div class="message__contents__box__text__body">
+            <%= tweet.body%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
+<%= render partial:"appBanner"%>
+<%= render partial:"footer" %>
+<%=link_to (new_tweet_path), class:"purchase" do %>
+  <div class="purchaseBtn">
+    <span class="purchaseBtn__text">
+      投稿する
+    </span>
+    <%= image_tag "/icon_camera.png", class:"purchaseBtn__icon" %> 
+    <% end %> 
+  </div>
