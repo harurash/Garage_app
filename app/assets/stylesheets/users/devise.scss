@@ -1,8 +1,12 @@
+.login-wrapper{
+  height: calc(100vh - 80px);
+  width: 100%;
+  padding-top: 50px;
+}
+
 .user-session-main {
   width: 500px;
   margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
   .field {
     .input-field {
       width: 200px;
@@ -30,7 +34,7 @@
 
 
 .new--user--select--content {
-  width: 300px;
+  width: 400px;
   height: 40px;
   display: flex;
     .google {
@@ -50,4 +54,33 @@
       color: white;
     }
   }
+  .login{
+    width: 200px;
+    height: 30px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    .login_btn{
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
 
+
+  .pass{
+    width: 200px;
+    height: 30px;
+    background-color: #009900;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .pass_btn{
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
