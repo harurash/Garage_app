@@ -72,4 +72,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     root_path
   end
+
+  def profile_update
+    current_user.assign_attributes(account_update_params)
+    if current_user.save
+	  redirect_to "/users/sign_in", notice: 'プロフィールを更新しました'
+    else
+      render "profile_edit"
+    end
+  end
+  
+  protected
+  
+  def configure_account_update_params
+   devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+  end
 end

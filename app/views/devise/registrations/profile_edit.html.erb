@@ -1,8 +1,7 @@
-<div class="user-session-main">
-  <h3>新規登録</h3>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_for current_user, url: {action: 'profile_update'} do |f| %>
 
+  <div class="user-session-main">
+  <h3>プロフィール編集</h3>
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "name",class:"input-field",placeholder: "10文字以下" %>
@@ -31,25 +30,8 @@
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "新規登録" ,class:"btn" %>
-    </div>
-  <% end %>
-
-  <div class="new--user--select--content" id="google">
-    <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post ,class:"session-link" do %>
-      <i class="fab fa-google google"></i>
-    <% end %>
+ 
+  <div class="actions">
+    <%= f.submit "Update" %>
   </div>
-  <div class="new--user--select--content" id="facebook">
-    <%= link_to  user_facebook_omniauth_authorize_path, method: :post ,class:"session-link" do %>
-     <i class="fab fa-facebook-square facebook"></i>
-    <% end %>
-  </div>
-  <%= render "devise/shared/links" %><br />
-  <p>※Facebook/google アカウントから新規登録できます</p><br />
-</div>
-
-
-
-
+<% end %>

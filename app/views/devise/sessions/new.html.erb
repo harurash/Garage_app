@@ -1,3 +1,4 @@
+<div class="login-wrapper">
 <div class="user-session-main">
   <h3>ログイン</h3>
 
@@ -32,12 +33,14 @@
   <%= render "devise/shared/links" %>
        <div class="new--user--select--content" id="google">
         <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post ,class:"session-link" do %>
-          <i class="fab fa-google google">&emsp;googleでログイン</i>
+          <i class="fab fa-google google"></i>
         <% end %>
       </div>
       <div class="new--user--select--content" id="facebook">
         <%= link_to  user_facebook_omniauth_authorize_path, method: :post ,class:"session-link" do %>
-          <i class="fab fa-facebook-square facebook">&emsp;Facebookでログイン</i>
+          <i class="fab fa-facebook-square facebook"></i>
         <% end %>
       </div>
+      <p>※Facebook/google アカウントからログインできます</p><br />
+</div>
 </div>
