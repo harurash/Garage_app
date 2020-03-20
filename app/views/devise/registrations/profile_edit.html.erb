@@ -15,22 +15,7 @@
     <%= f.label :image %><br/>
     <%= f.file_field :image %>
   </div>
-
-    <% if @sns_id.present? %>
-      <%= hidden_field_tag :sns_auth, true %>
-    <%  else %>
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "new-password",placeholder: "6文字以上",class:"input-field"%>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class:"input-field"%>
-      </div>
-    <% end %>
-
- 
+   
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

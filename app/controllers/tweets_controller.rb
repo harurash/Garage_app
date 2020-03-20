@@ -35,6 +35,11 @@ class TweetsController < ApplicationController
   end
   def search
     @tweets = Tweet.search(params[:keyword])
+    if @tweets.length >= 1
+      flash[:notice] = "こちらの投稿が見つかりました"
+    else
+      flash[:notice] = "お探しの投稿は見つかりません"
+    end
   end
   private
     def tweet_params
