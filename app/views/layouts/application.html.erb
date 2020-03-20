@@ -25,8 +25,7 @@
       <ul>
         <% if user_signed_in? %>
         <li><a class="active" href="/">Home</a></li>
-        <li><%= link_to "MyGarage",profile_edit_path%></li>
-        <li><a href="#">Favorite</a></li>
+        <li><%= link_to "profile",profile_edit_path%></li>
         <li><%= link_to "post",new_tweet_path%></li>
         <li><%= link_to "Logout",destroy_user_session_path,method: :delete %></li>
         <% else %>
