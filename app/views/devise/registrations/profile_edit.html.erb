@@ -1,22 +1,21 @@
-<%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+    <div class="user-edit-main">
+    <h3>プロフィール編集</h3>
+     <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name",class:"input-field",placeholder: "10文字以下" %>
+      </div>
 
-  <div class="user-session-main">
-  <h3>プロフィール編集</h3>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name",class:"input-field",placeholder: "10文字以下" %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-field" %>
+      </div>
+      <div class="field">
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
     </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input-field" %>
+    
+    <div class="actions">
+      <%= f.submit "Update",class:"update-btn" %>
     </div>
-    <div class="field">
-    <%= f.label :image %><br/>
-    <%= f.file_field :image %>
-  </div>
-   
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+  <% end %>

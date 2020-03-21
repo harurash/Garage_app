@@ -125,6 +125,11 @@
               height: 80%;
               width: 80%;
             }
+            .search_icon:hover {
+              box-shadow    : none;        
+              color         : #1a1aff;    
+              opacity: 0.5;    
+            }
             .search-btn{
               display: none;
             }
