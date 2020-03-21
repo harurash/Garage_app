@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
   validates :body, presence: true,
                    length: {maximum: 140}                  
   accepts_nested_attributes_for :images
-  
+  validates :images, presence: true
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
