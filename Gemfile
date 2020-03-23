@@ -75,3 +75,4 @@ gem "omniauth-rails_csrf_protection"
 group :production do
   gem 'unicorn', '5.4.1'
 end
+gem 'fog-aws'
