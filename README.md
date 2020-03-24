@@ -2,15 +2,17 @@
 ## Garage App
 GarageAppは車の情報をシェア出来る投稿アプリです。写真の複数投稿、人気の投稿記事ランキング、、投稿検索、プロフィール編集などが可能です。
 ## 使用技術
-・ruby 2.5.1
-・rails 5.2.4.1
-・HTML
-・SCSS
-・jQuery
-・MY SQL
-・AWS
+・ruby 2.5.1<br>
+・rails 5.2.4.1<br>
+・HTML<br>
+・SCSS<br>
+・jQuery<br>
+・MY SQL<br>
+・AWS<br>
 ## demo
-以下にアクセスし、ご覧ください。 http://18.177.15.150/
+以下にアクセスし、ご覧ください。 http://18.177.15.150/ <br>
+右上"LOGINからloginできます。<br>
+ご採用担当者様向けテストユーザーのアカウントをご用意していますのでそちらからログインして頂けます。<br>
 ## DB設計
 ### tweetテーブル
 |column|type|options|
