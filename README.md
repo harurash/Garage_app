@@ -1,7 +1,7 @@
 # README
-# Garage App
+## Garage App
 GarageAppは車の情報をシェア出来る投稿アプリです。写真の複数投稿、人気の投稿記事ランキング、、投稿検索、プロフィール編集などが可能です。
-# 使用技術
+## 使用技術
 ・ruby 2.5.1
 ・rails 5.2.4.1
 ・HTML
@@ -9,10 +9,10 @@ GarageAppは車の情報をシェア出来る投稿アプリです。写真の�
 ・jQuery
 ・MY SQL
 ・AWS
-# demo
+## demo
 以下にアクセスし、ご覧ください。 http://18.177.15.150/
-# DB設計
-## tweetテーブル
+## DB設計
+### tweetテーブル
 |column|type|options|
 |------|----|-------|
 |body|text||
@@ -22,12 +22,14 @@ GarageAppは車の情報をシェア出来る投稿アプリです。写真の�
 ・has_many :images<br>
 ・has_many :favorites,dependent: :destroy<br>
 ・has_many :favorite_tweets, through::favorites, source: :user<br>
-## imageテーブル
+### imageテーブル
 |column|type|options|
 |------|----|-------|
+|image|string|null:false|
+|tweet_id|integer|null:false|
 ### association
-belongs_to :tweet
-## userテーブル
+・belongs_to :tweet
+### userテーブル
 |column|type|options|
 |------|----|-------|
 |name|string|ull: false, default: ""|
@@ -35,12 +37,11 @@ belongs_to :tweet
 |encrypted_password|string|default: ""|
 |image|text||
 ### association
-・devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable,:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 ・has_many :sns_credentials<br>
 ・has_many :tweets<br>
 ・has_many :favorites<br>
 ・has_many :favorite_tweets, through: :favorites, source: :tweet<br>
-## favoriteテーブル
+### favoriteテーブル
 |column|type|options|
 |------|----|-------|
 |user_id|integer||
@@ -48,7 +49,7 @@ belongs_to :tweet
 ### association
 ・belongs_to :tweet<br>
 ・belongs_to :user<br>
-## sns_credentialsテーブル
+### sns_credentialsテーブル
 |column|type|options|
 |------|----|-------|
 |provider|string||
