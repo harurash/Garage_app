@@ -5,12 +5,16 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.create(tweet_params)
-    @tweet.user_id = current_user.id
-    if @tweet.save
-      redirect_to tweets_path,notice: "投稿しました"
+    if user_signed_in? 
+      @tweet = Tweet.create(tweet_params)
+      @tweet.user_id = current_user.id
+      if @tweet.save
+        redirect_to tweets_path,notice: "投稿しました"
+      else
+        render "new"
+      end
     else
-      render "new"
+      redirect_to tweets_path,notice: "ログインしてください"
     end
   end
 
