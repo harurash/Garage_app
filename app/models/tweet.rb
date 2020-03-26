@@ -1,5 +1,6 @@
 class Tweet < ApplicationRecord
   belongs_to :user
+  has_many :comments
   has_many :images
   has_many :favorites,dependent: :destroy
   has_many :favorite_tweets, through: :favorites, source: :user

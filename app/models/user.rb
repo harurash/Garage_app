@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_many :sns_credentials
   has_many :tweets
+  has_many :comments
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet
   mount_uploader :image, ImageUploader
