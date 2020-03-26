@@ -94,3 +94,62 @@
       }
     }
   }
+// コメント機能
+.container{
+  height: 160px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text_area{
+    height: 80px;
+    width: 100%;
+    #comment_text{
+      width: 400px;
+    }
+  }
+  .send_btn{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .comment_btn{
+      display       : inline-block;
+      border-radius : 5%;
+      font-size     : 18pt;
+      text-align    : center; 
+      cursor        : pointer;
+      padding       : 0px 69px;
+      background    : rgba(26, 26, 255, 0.87);
+      color         : #ffffff;
+      line-height   : 1em;
+      transition    : .3s;  
+      border        : 2px solid rgba(26, 26, 255, 0.87);
+    }
+    .comment_btn:hover {
+      color         : rgba(26, 26, 255, 0.87);
+      background    : #ffffff;
+    }
+  }
+}
+.comments{
+  height: 180px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  &__text{
+    overflow: scroll;
+    height: max-content;
+    min-height: 50px;
+    max-height: 140px;
+    width: 400px;
+    background-color:whitesmoke;
+    border:solid 2px gray;
+    .strong__name{
+      font-weight: bold;
+      color: #DAA520;
+    }
+  }
+
+}

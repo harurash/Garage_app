@@ -32,3 +32,33 @@
     </div>
   </div>
 </div>
+
+
+<div class="container">
+  <% if current_user %>
+    <%= form_with(model: [@tweets, @comment], local: true) do |form| %>
+  <div class="text_area">
+    <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+  </div>
+  <div class="send_btn">
+    <%= form.submit "SEND",class: "comment_btn"%>
+  </div>
+  <% end %>
+  <% else %>
+    <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <% end %>
+</div>
+
+<div class="comments">
+  <div class="comments__text">
+  <h4>＜コメント一覧＞</h4>
+  <% if @comments %>
+  <% @comments.each do |comment| %>
+    <p>
+      <strong class="strong__name"><%=comment.user.name%>：</strong>
+      <%= comment.text %>
+    </p>
+    <% end %>
+  <% end %>
+  </div>
+</div>

@@ -98,6 +98,12 @@ a.active,a:hover{
   #check:checked ~ ul{
     left: 0;
   }
+  .container{
+    display: none;
+  }
+  .comments{
+    display: none;
+  }
 }
 
 section{

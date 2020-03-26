@@ -28,6 +28,8 @@ class TweetsController < ApplicationController
     @tweets = Tweet.find(params[:id])
     @first_image = Image.find_by(tweet_id: @tweets.id)
     @images = Image.where(tweet_id: @tweets.id)
+    @comment = Comment.new
+    @comments = @tweets.comments.includes(:user)
   end
   def destroy
     tweet = Tweet.find(params[:id])
