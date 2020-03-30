@@ -36,12 +36,12 @@
 
 <div class="container">
   <% if current_user %>
-    <%= form_with(model: [@tweets, @comment], local: true) do |form| %>
+    <%= form_with(model: [@tweets, @comment], local: true,id:"new_comment") do |form| %>
   <div class="text_area">
-    <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+    <%= form.text_area :text, placeholder: "コメントする", rows: "2",class: "textbox" %>
   </div>
   <div class="send_btn">
-    <%= form.submit "SEND",class: "comment_btn"%>
+    <%= form.submit "SEND",class: "form__submit"%>
   </div>
   <% end %>
   <% else %>
@@ -51,13 +51,14 @@
 
 <div class="comments">
   <div class="comments__text">
-  <h4>＜コメント一覧＞</h4>
   <% if @comments %>
   <% @comments.each do |comment| %>
-    <p>
+    <div class="comments__text__js">
+      <p class="comment-text">
       <strong class="strong__name"><%=comment.user.name%>：</strong>
-      <%= comment.text %>
-    </p>
+        <%= comment.text %>
+      </p>
+    <div>
     <% end %>
   <% end %>
   </div>
